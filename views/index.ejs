@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+
+    <table class="table table-striped " >
+        <tr style="text-align:center" >
+            <th style="text-align:center">ID</th>
+            <th style="text-align:center">姓名</th>
+            <th style="text-align:center">性别</th>
+            <th style="text-align:center">年龄</th>
+            <th style="text-align:center">操作</th>
+        </tr>
+        <% for(var i=0;i<result.length;i++){
+        %>
+        <tr >
+            <th style="text-align:center"><%=result[i].mid%></th>
+            <th style="text-align:center"><%=result[i].mname%></th>
+            <th style="text-align:center"><%=result[i].msex%></th>
+            <th style="text-align:center"><%=result[i].mage%></th>
+            <th style="text-align:center">
+                <a href="/update/<%=result[i].mid%>&&<%=result[i].mname%>&&<%=result[i].msex%>&&<%=result[i].mage%>"><button type="button" class="btn btn-success">修改</button></a>
+                <a href="/del/<%=result[i].mid%>"><button type="button" class="btn btn-danger">删除</button></a>
+            </th>
+        </tr>
+        <%}%>
+    </table>
+    <a href="/add" class="btn btn-primary btn-lg active" role="button">添加</a>
+
+</div>
+</body>
+</html>
